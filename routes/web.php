@@ -2,6 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HelloUshasriController;
+use App\Http\Controllers\CalculatorController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\MyViewController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +24,18 @@ Route::get('/', function () {
 });
 
 Route::get('/usha',[HelloUshasriController::class, 'index']);
+Route::get('/greet/{name}',[HelloUshasriController::class, 'greet']);
+
+
+
+Route::get('/sum/{num1}/{num2}',[CalculatorController::class, 'sum']);
+Route::get('/sub/{num1}/{num2}',[CalculatorController::class, 'sub']);
+Route::get('/mul/{num1}/{num2}',[CalculatorController::class, 'mul']);
+Route::get('/div/{num1}/{num2}',[CalculatorController::class, 'div']);
+
+
+Route::get('/myview',[MyViewController::class, 'myview']);
+Route::get('/login',[MyViewController::class, 'login']);
+Route::get('/register',[MyViewController::class, 'register']);
+
+

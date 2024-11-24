@@ -10,4 +10,9 @@ class HelloUshasriController extends Controller
     {
         return 'Hello, Ushasri';
     }
+
+    public function greet($name)
+    {
+        return 'Hii, ' . $name . '!';
+    }
 }
