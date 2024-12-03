@@ -8,6 +8,7 @@ use App\Http\Controllers\MyViewController;
 
 
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -35,7 +36,13 @@ Route::get('/div/{num1}/{num2}',[CalculatorController::class, 'div']);
 
 
 Route::get('/myview',[MyViewController::class, 'myview']);
-Route::get('/login',[MyViewController::class, 'login']);
-Route::get('/register',[MyViewController::class, 'register']);
+Route::get('/login',[UserController::class, 'login']);
+Route::get('/register',[UserController::class, 'register']);
+
+
+
+
+Route::get('authlogin',[App\Http\Controllers\AuthManager::class, 'login'])->name('authlogin');
+Route::get('authregister',[App\Http\Controllers\AuthManager::class, 'register'])->name('authregister');
 
 
