@@ -45,4 +45,8 @@ Route::get('/register',[UserController::class, 'register']);
 Route::get('authlogin',[App\Http\Controllers\AuthManager::class, 'login'])->name('authlogin');
 Route::get('authregister',[App\Http\Controllers\AuthManager::class, 'register'])->name('authregister');
 
+Route::post('authlogin', 'App\Http\Controllers\AuthManager@loginPost')->name('authlogin.post');
+Route::post('authregister', 'App\Http\Controllers\AuthManager@registerPost')->name('authregister.post');
+
+
 
