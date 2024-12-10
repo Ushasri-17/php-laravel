@@ -3,6 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash; 
+use Illuminate\Support\Facades\Auth; 
+use Illuminate\Support\Facades\ProductsManager; 
+
+
 
 class AuthManager extends Controller
 {
@@ -15,7 +21,7 @@ class AuthManager extends Controller
     {
         return view('auth.register');
     }
-}
+
 function loginPost(Request $request)
 {
 
@@ -33,11 +39,11 @@ function loginPost(Request $request)
       $request->session()->regenerate();
 
       return redirect()->intended(route('home'));
-}
+  }
   return redirect('authlogin')->with('error', 'Invalid Email or Password');
 }
 
-function registerPost(Request $request)
+function registerUser(Request $request)
 {
 
     $request->validate([
@@ -59,5 +65,6 @@ successfully');
        return redirect(route('authregister'))->with('error', 'Failed to create
 user');
     }
+}
 }
 

@@ -5,6 +5,11 @@ use App\Http\Controllers\HelloUshasriController;
 use App\Http\Controllers\CalculatorController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\MyViewController;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\ProductsManager;
+use App\Http\Controllers\Hash;
+use App\Http\Controllers\User;
+
 
 
 
@@ -35,9 +40,7 @@ Route::get('/mul/{num1}/{num2}',[CalculatorController::class, 'mul']);
 Route::get('/div/{num1}/{num2}',[CalculatorController::class, 'div']);
 
 
-Route::get('/myview',[MyViewController::class, 'myview']);
-Route::get('/login',[UserController::class, 'login']);
-Route::get('/register',[UserController::class, 'register']);
+
 
 
 
@@ -45,8 +48,10 @@ Route::get('/register',[UserController::class, 'register']);
 Route::get('authlogin',[App\Http\Controllers\AuthManager::class, 'login'])->name('authlogin');
 Route::get('authregister',[App\Http\Controllers\AuthManager::class, 'register'])->name('authregister');
 
-Route::post('authlogin', 'App\Http\Controllers\AuthManager@loginPost')->name('authlogin.post');
-Route::post('authregister', 'App\Http\Controllers\AuthManager@registerPost')->name('authregister.post');
+Route::post('/authlogin',[App\Http\Controllers\AuthManager::class, 'loginPost'])->name('authlogin.post');
+Route::post('/authregister',[App\Http\Controllers\AuthManager::class, 'registerUser'])->name('authregister.post');
 
+Route::get('/home', 'App\Http\Controllers\ProductsManager@index')->name('home');
+Route::get('login','App\Http\Controllers\AuthManager@login')->name('login');
 
 
