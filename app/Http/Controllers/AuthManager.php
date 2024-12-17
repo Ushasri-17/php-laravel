@@ -66,5 +66,10 @@ successfully');
 user');
     }
 }
+public function logout()
+{
+    Auth::logout();
+    return redirect('login');
+}
 }
 
