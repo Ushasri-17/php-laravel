@@ -7,7 +7,6 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\MyViewController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ProductsManager;
-use App\Http\Controllers\CategoriesManager;
 use App\Http\Controllers\Hash;
 use App\Http\Controllers\User;
 
@@ -59,5 +58,6 @@ Route::get('logout',[App\Http\Controllers\AuthManager::class, 'logout'])->name('
 
 Route::get('products',[App\Http\Controllers\ProductsManager::class, 'Product'])->name('products');
 Route::get('categories',[App\Http\Controllers\CategoriesManager::class, 'Category'])->name('categories');
+
 
 
