@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,13 +9,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <style>
-    body{
-    background-image: url(login.jpg);
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
+    body {
+        background-image: url(login.jpg);
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
     }
 </style>
+
 <body>
     <h1>Registration</h1>
     <form action="register.php" method="post">
@@ -34,4 +36,5 @@
         <input type="submit" value="Register" name="register">
     </form>
 </body>
+
 </html>

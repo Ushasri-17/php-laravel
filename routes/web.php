@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\MyViewController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ProductsManager;
+use App\Http\Controllers\CategoriesManager;
 use App\Http\Controllers\Hash;
 use App\Http\Controllers\User;
 
@@ -48,11 +49,15 @@ Route::get('/div/{num1}/{num2}',[CalculatorController::class, 'div']);
 Route::get('authlogin',[App\Http\Controllers\AuthManager::class, 'login'])->name('authlogin');
 Route::get('authregister',[App\Http\Controllers\AuthManager::class, 'register'])->name('authregister');
 
-Route::post('/authlogin',[App\Http\Controllers\AuthManager::class, 'loginPost'])->name('authlogin.post');
-Route::post('/authregister',[App\Http\Controllers\AuthManager::class, 'registerUser'])->name('authregister.post');
+Route::post('authlogin',[App\Http\Controllers\AuthManager::class, 'loginPost'])->name('authlogin.post');
+Route::post('authregister',[App\Http\Controllers\AuthManager::class, 'registerUser'])->name('authregister.post');
 
-Route::get('/home', 'App\Http\Controllers\ProductsManager@index')->name('home');
-Route::get('login','App\Http\Controllers\AuthManager@login')->name('login');
+Route::get('home', [App\Http\Controllers\ProductsManager::class, 'index'])->name('home');
+Route::get('login',[App\Http\Controllers\AuthManager::class, 'login'])->name('login');
 Route::get('logout',[App\Http\Controllers\AuthManager::class, 'logout'])->name('logout');
+
+
+Route::get('products',[App\Http\Controllers\ProductsManager::class, 'Product'])->name('products');
+Route::get('categories',[App\Http\Controllers\CategoriesManager::class, 'Category'])->name('categories');
 
 

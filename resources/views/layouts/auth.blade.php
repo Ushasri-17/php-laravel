@@ -13,7 +13,7 @@
 <body class="d-flex align-items-center py-4 bg-body-tertiary">
 
     @yield('content')
-    
+
     <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
     @yield('script')
 </body>
