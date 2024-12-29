@@ -58,6 +58,11 @@ Route::get('logout',[App\Http\Controllers\AuthManager::class, 'logout'])->name('
 
 Route::get('products',[App\Http\Controllers\ProductsManager::class, 'Product'])->name('products');
 Route::get('categories',[App\Http\Controllers\CategoriesManager::class, 'Category'])->name('categories');
+Route::get('products/{slug}', [ProductsManager::class,'show'])->name('details');
 
+
+Route::middleware('auth')->group(function () {
+    Route::get('/cart/{id}', [ProductsManager::class,'addToCart'])->name('cart.add');
+});
 
 
