@@ -36,7 +36,8 @@
                         @foreach($cartItems as $item)
                             <tr>
                                 <td>
-                                    <img src="{{ $item->product->image }}" alt="{{ $item->product->title }}" style="height: 50px; width: 50px;">
+                                    <img src="{{ $item->product->image }}" alt="{{ $item->product->title }}"
+                                        style="height: 50px; width: 50px;">
                                     {{ $item->product->title }}
                                 </td>
                                 <td>&#8377; {{ $item->product->price }}</td>
@@ -44,7 +45,8 @@
                                     <form method="POST" action="{{ route('cart.update', $item->id) }}">
                                         @csrf
                                         @method('PUT')
-                                        <input type="number" name="quantity" value="{{ $item->quantity }}" min="1" class="form-control" style="width: 80px;">
+                                        <input type="number" name="quantity" value="{{ $item->quantity }}" min="1"
+                                            class="form-control" style="width: 80px;">
                                         <button type="submit" class="btn btn-primary btn-sm mt-2">Update</button>
                                     </form>
                                 </td>
