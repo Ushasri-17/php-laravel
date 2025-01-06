@@ -38,4 +38,5 @@ class ProductsManager extends Controller
             return redirect()->back()->with('error','Failed to add product to cart');
         }
     }
+
 }

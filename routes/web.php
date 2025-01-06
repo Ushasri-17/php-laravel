@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HelloUshasriController;
 use App\Http\Controllers\CalculatorController;
@@ -63,6 +64,13 @@ Route::get('products/{slug}', [ProductsManager::class,'show'])->name('details');
 
 Route::middleware('auth')->group(function () {
     Route::get('/cart/{id}', [ProductsManager::class,'addToCart'])->name('cart.add');
+    Route::middleware('auth')->group(function () {
+    Route::get('/cart', [CartController::class, 'cart'])->name('cart.index'); // View cart // 
+    Route::put('/cart/update/{id}', [CartController::class, 'updateCart'])->name('cart.update'); // Update cart quantity
+    Route::delete('/cart/remove/{id}', [CartController::class, 'removeFromCart'])->name('cart.remove'); // Remove from cart
+    });
 });
+
+    
 
 

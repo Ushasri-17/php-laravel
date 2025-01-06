@@ -17,6 +17,14 @@
                     <a class="nav-link" href="{{ route('categories')}}">Categories</a>
                 </li>
                 <li class="nav-item">
+                        <a class="nav-link" href="{{ route('cart.index') }}">
+                            Cart 
+                            <span class="badge bg-secondary">
+                                {{ App\Models\Cart::where('user_id', auth()->id())->count() }}
+                            </span>
+                        </a>
+                    </li>
+                <li class="nav-item">
                     <a class="nav-link" href="{{ route('logout')}}">Logout</a>
                 </li>
             </ul>

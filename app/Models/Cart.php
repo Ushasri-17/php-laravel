@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Cart extends Model
 {
     protected $table = 'cart';
+
+    protected $fillable = ['user_id', 'product_id', 'quantity'];
+
+    // Define the relationship to the Product model
+    public function product()
+    {
+        return $this->belongsTo(Product::class, 'product_id');
+    }
 }
